@@ -5,6 +5,7 @@ import { Box } from '@mui/material'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 
+import Logo from '@/assets/sound_united_logo.jpg'
 import { HeaderAction, KiboLogo } from '@/components/common'
 import { HamburgerIcon, StoreFinderIcon, CartIcon } from '@/components/layout'
 import { useHeaderContext } from '@/context'
@@ -44,7 +45,7 @@ const MobileHeader = ({ children }: { children?: React.ReactNode }) => {
 
         <Box position="relative">
           <Link href="/" passHref>
-            <KiboLogo small />
+            <KiboLogo small logo={Logo} />
           </Link>
         </Box>
 

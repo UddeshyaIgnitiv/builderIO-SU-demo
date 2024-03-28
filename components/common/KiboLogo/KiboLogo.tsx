@@ -13,12 +13,14 @@ interface KiboLogoProps {
 const styles = {
   logoContainer: {
     width: {
-      xs: 33,
-      md: 78,
+      xs: 70,
+      md: 100,
     },
     height: {
-      xs: 33,
-      md: 60,
+      // xs: 33,
+      // md: 78,
+      xs: 70,
+      md: 100,
     },
   },
   smallLogo: {
