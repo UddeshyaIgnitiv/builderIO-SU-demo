@@ -11,6 +11,7 @@ import {
   Theme,
   Typography,
   useMediaQuery,
+  Backdrop,
 } from '@mui/material'
 import { Container } from '@mui/system'
 
@@ -28,7 +29,7 @@ export interface KiboDialogProps {
   customMaxWidth?: string
   showContentTopDivider?: boolean
   showContentBottomDivider?: boolean
-  onClose: () => void
+  onClose?: () => void
 }
 
 interface StyledDialogProps {
@@ -110,6 +111,7 @@ const KiboDialog = (props: KiboDialogProps) => {
       customMaxWidth={customMaxWidth}
       isDialogCentered={mdScreen ? true : false}
       data-test-id="kibo-dialog"
+      BackdropProps={{ style: { backdropFilter: 'blur(16px)' } }}
     >
       <Container maxWidth={'xl'}>
         <StyledDialogTitle

@@ -63,7 +63,8 @@ const LoginDialog = () => {
       Content={<LoginContent onLogin={handleLogin} onForgotPasswordClick={onForgotPassword} />}
       Actions={<LoginFooter onRegisterNow={onRegisterClick} />}
       customMaxWidth="32.375rem"
-      onClose={closeModal}
+      showCloseButton={false}
+      // onClose={closeModal}
     />
   )
 }

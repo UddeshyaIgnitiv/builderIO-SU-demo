@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { BuilderComponent, builder, Builder } from '@builder.io/react'
 import '@builder.io/widgets'
 import getConfig from 'next/config'
@@ -5,7 +7,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import CmsHomePageProducts from '../../cms/components/CmsHomePageProducts/CmsHomePageProducts'
 import { KiboHeroCarousel, ContentTile, SmallBanner } from '@/components/home'
+import { LoginDialog } from '@/components/layout'
 import { ProductRecommendations } from '@/components/product'
+import { useAuthContext, useHeaderContext, useModalContext } from '@/context'
 import getCategoryTree from '@/lib/api/operations/get-category-tree'
 import type { CategoryTreeResponse, NextPageWithLayout } from '@/lib/types'
 
@@ -393,6 +397,23 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 }
 
 const Home: NextPageWithLayout<HomePageProps> = (props) => {
+  const { isAuthenticated } = useAuthContext()
+  const { showModal, closeModal } = useModalContext()
+
+  // if (!isAuthenticated) {
+  //   showModal({ Component: LoginDialog })
+  // } else {
+  //   closeModal()
+  // }
+
+  React.useEffect(() => {
+    if (!isAuthenticated) {
+      showModal({ Component: LoginDialog })
+    } else {
+      closeModal()
+    }
+  }, [isAuthenticated])
+
   const { page } = props
   return (
     <>
