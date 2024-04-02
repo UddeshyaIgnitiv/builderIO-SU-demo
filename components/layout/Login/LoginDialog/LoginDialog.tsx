@@ -11,6 +11,7 @@ import { useModalContext } from '@/context/ModalContext'
 
 export interface LoginFooterProps {
   onRegisterNow: () => void
+  onCloseClick: () => void
 }
 
 const StyledActionsComponent = styled(Stack)(() => ({
@@ -23,7 +24,7 @@ const StyledActionsComponent = styled(Stack)(() => ({
 }))
 
 const LoginFooter = (props: LoginFooterProps) => {
-  const { onRegisterNow } = props
+  const { onRegisterNow, onCloseClick } = props
 
   const { t } = useTranslation('common')
 
@@ -34,6 +35,10 @@ const LoginFooter = (props: LoginFooterProps) => {
       </Typography>
       <Link component="button" variant="body1" color="text.primary" onClick={onRegisterNow}>
         {t('register-now')}
+      </Link>
+      <hr />
+      <Link component="button" variant="body1" color="secondary.light" onClick={onCloseClick}>
+        {t('close')}
       </Link>
     </StyledActionsComponent>
   )
@@ -61,10 +66,10 @@ const LoginDialog = () => {
     <KiboDialog
       Title={t('log-in')}
       Content={<LoginContent onLogin={handleLogin} onForgotPasswordClick={onForgotPassword} />}
-      Actions={<LoginFooter onRegisterNow={onRegisterClick} />}
+      Actions={<LoginFooter onRegisterNow={onRegisterClick} onCloseClick={closeModal} />}
       customMaxWidth="32.375rem"
-      showCloseButton={true}
-      onClose={closeModal}
+      showCloseButton={false}
+      // onClose={closeModal}
     />
   )
 }
