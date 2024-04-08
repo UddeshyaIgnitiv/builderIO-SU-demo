@@ -64,7 +64,7 @@ export const kiboHeaderStyles = {
     margin: 'auto',
     // minHeight: '70px',
     // width: '100%',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     flex: 1,
     backgroundColor: 'transparent',

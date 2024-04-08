@@ -13,14 +13,14 @@ interface KiboLogoProps {
 const styles = {
   logoContainer: {
     width: {
-      xs: 70,
-      md: 100,
+      xs: 40,
+      md: 70,
     },
     height: {
       // xs: 33,
       // md: 78,
-      xs: 70,
-      md: 100,
+      xs: 40,
+      md: 70,
     },
   },
   smallLogo: {
@@ -32,7 +32,8 @@ const styles = {
 const KiboLogo = ({ logo = Logo, alt = 'kibo-logo', small }: KiboLogoProps) => {
   return (
     <Box width={'100%'} sx={small ? styles.smallLogo : styles.logoContainer}>
-      <KiboImage src={logo} alt={alt} fill loading="eager" />
+      <KiboImage src={logo} alt={alt} width={70} marginLeft={17} loading="eager" />
+      {/* Added width and margin here to control size of logo as wasn't able to control using maxWidth, check later */}
     </Box>
   )
 }
