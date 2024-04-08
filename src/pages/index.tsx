@@ -173,23 +173,6 @@ Builder.registerComponent(CmsHomePageProducts, {
         },
       ],
     },
-    {
-      name: 'topSellings',
-      type: 'object',
-      defaultValue: {
-        title: 'Top-selling products',
-      },
-      subFields: [
-        {
-          name: 'title',
-          type: 'string',
-        },
-        {
-          name: 'productCodes',
-          type: 'KiboCommerceProductsList',
-        },
-      ],
-    },
   ],
 })
 

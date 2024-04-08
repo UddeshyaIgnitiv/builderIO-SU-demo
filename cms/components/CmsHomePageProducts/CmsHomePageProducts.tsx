@@ -21,14 +21,9 @@ const CmsHomePageProducts = (props: CmsHomePageProductsProps) => {
   return (
     <Container maxWidth={'xl'}>
       <Grid sx={{ ...styles.gridContainer }} container columnSpacing={{ md: 5 }}>
-        <Grid item sm={12} md={6}>
+        <Grid item sm={12} md={12}>
           {props?.recentlyViewed?.productCodes?.length > 0 && (
             <ProductRecommendations {...props.recentlyViewed} />
-          )}
-        </Grid>
-        <Grid item sm={12} md={6}>
-          {props?.topSellings?.productCodes?.length > 0 && (
-            <ProductRecommendations {...props.topSellings} />
           )}
         </Grid>
       </Grid>
