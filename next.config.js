@@ -34,7 +34,7 @@ module.exports = {
   publicRuntimeConfig: {
     currentUrl: process.env.CURRENT_DOMAIN,
     metaData: {
-      siteTitle: 'Kibo Commerce',
+      siteTitle: 'Ignitiv Commerce',
       defaultTitle: 'Storefront',
       defaultDescription: 'Kibo Commerce Storefront',
     },
